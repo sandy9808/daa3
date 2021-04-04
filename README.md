@@ -24,7 +24,9 @@ It is about finding a path between vertices in a graph such that the total sum o
 
 ## How to use code
 Download project
-git clone https://github.com/Amanjeetk11/daa2.git 
+<br />
+git clone https://github.com/sandy9808/daa3.git
+<br />
 Project Initialize 
 ```
 cd daa
@@ -64,20 +66,70 @@ A path between vertices in a graph in which the total sum of the edges weights i
 
 ```
 
-Test Case-1
+Test Case for code1.cpp
 Input:
+13 16
+0 1
+1 2
+2 3
+0 4 
+1 5
+2 6
+3 7
+5 6
+4 8
+8 9
+5 10
+6 11
+7 12
+9 10 
+10 11
+11 12
+Output:
+SSSP(0, 0) = 0
+SSSP(0, 1) = 1
+SSSP(0, 2) = 2
+SSSP(0, 3) = 3
+SSSP(0, 4) = 1
+SSSP(0, 5) = 2
+SSSP(0, 6) = 3
+SSSP(0, 7) = 4
+SSSP(0, 8) = 2
+SSSP(0, 9) = 3
+SSSP(0, 10) = 3
+SSSP(0, 11) = 4
+SSSP(0, 12) = 5
 
-Output:
-6
-#--------------------------#
-Test Case-2
+Test Case for code2.cpp
 Input:
-10
-1 17 5 10 13 15 10 5 16 8
+5 5 1
+0 1 1
+0 2 10
+1 3 2
+2 3 10
+3 4 3
 Output:
-7
+SSSP(1, 0) = 1
+SSSP(1, 1) = 0
+SSSP(1, 2) = 11
+SSSP(1, 3) = 2
+SSSP(1, 4) = 5
+
+Test Case for code3.cpp
+Input:
+5 5 0
+0 1 1
+0 2 10
+1 3 2
+2 3 -10
+3 4 3
+Output:
+SSSP(0, 0) = 0
+SSSP(0, 1) = 1
+SSSP(0, 2) = 10
+SSSP(0, 3) = 0
+SSSP(0, 4) = 3
 ```
-
 ---
 
 ### Theory
@@ -118,10 +170,10 @@ Time  complexity  of  Bellman Ford's algorithm  is O(V*E),  because  it consists
 
 ### Conclusion
 
-<br />Above two methods have different time complexity & space complexity and meet to fulfill the problem statement. The order in which they are good can be listed as:
-<br />I. Approach 2
-<br />II. Approach 1
-<br />Based on the time complexity and space complexity.
+Here we discussed algorithms to solve SSSP for undirected graph and also for Unweighted graph, <br />the distances can be computed in almost linear time complexity but for weighted graph, <br />there exist several algorithms for different types of graphs.
 
 ### References
-Utkarsh Trivedi, ’Longest Zig-Zag Subsequence’,GeeksforGeeks, 2018. [Online]. [Accessed: 27-Mar-2021]
+<br />https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
+<br />https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
+<br />https://www.geeksforgeeks.org/shortest-path-unweighted-graph/
+
