@@ -32,11 +32,8 @@ public:
 				}
 			}
 		}
-		for (int i = 0; i < V; i++) {
-			if (i != src) {
-				cout << i << " is at distance of " << dist[i] << " from source vertex " << src << "\n";
-			}
-		}
+		for (int i = 0; i < V; i++)
+			printf("SSSP(%d, %d) = %d\n", src, i, dist[i]);
 	}
 
 };
@@ -71,4 +68,20 @@ Sample input is
 9 10 
 10 11
 11 12
+
+Output is :
+SSSP(0, 0) = 0
+SSSP(0, 1) = 1
+SSSP(0, 2) = 2
+SSSP(0, 3) = 3
+SSSP(0, 4) = 1
+SSSP(0, 5) = 2
+SSSP(0, 6) = 3
+SSSP(0, 7) = 4
+SSSP(0, 8) = 2
+SSSP(0, 9) = 3
+SSSP(0, 10) = 3
+SSSP(0, 11) = 4
+SSSP(0, 12) = 5
+
 */
