@@ -18,14 +18,8 @@ Mentor Name- "Md. Meraz"
 
 
 ## Problem Statement
-The longest Zig-Zag subsequence problem is to find length of the longest
-subsequence of given sequence such that all elements of this are
-alternating.
-If a sequence {x1, x2, .. xn} is alternating sequence then its element satisfy
-one of the following relation :
- x1 < x2 > x3 < x4 > x5 < …. xn or
- x1 > x2 < x3 > x4 < x5 > …. xn
-Solve using Dynamic programming.
+Single shortest distance problem - 
+It is about finding a path between vertices in a graph such that the total sum of the edges weights is minimum. 
 
 
 ## How to use code
@@ -34,15 +28,17 @@ git clone https://github.com/Amanjeetk11/daa2.git
 Project Initialize 
 ```
 cd daa
-mkdir daa2
+mkdir daa3
 
-#go to daa2
-cd daa2
+#go to daa3
+cd daa3
 
 #Create file
 touch readme.md
 touch code1.cpp
 touch code2.cpp
+touch code3.cpp
+
 .
 .
 ```
@@ -50,14 +46,17 @@ touch code2.cpp
 
 Run the code
 ```
-g++ code_1.cpp -o code_1
-g++ code_2.cpp -o code_2
-./code_1
-./code_2
+g++ code1.cpp -o code1
+g++ code2.cpp -o code2
+g++ code3.cpp -o code3
+./code1
+./code2
+./code3
 ```
 Output
 ```
-Length of the longest sub sequence of given sequence such that all elements of this are alternating.
+A path between vertices in a graph in which the total sum of the edges weights is minimum. 
+
 ```
 ---
 
@@ -67,8 +66,7 @@ Length of the longest sub sequence of given sequence such that all elements of t
 
 Test Case-1
 Input:
-4
-10, 22, 9, 33, 49, 50, 31, 60
+
 Output:
 6
 #--------------------------#
@@ -83,8 +81,8 @@ Output:
 ---
 
 ### Theory
-Let’s first formally define what subsequence is.
-A  subsequence  is  a  sequence  that  can  be  derived  from  an-other  sequence  by  zero  or  more  elements,  without  changingthe  order  of  the  remaining  elements  as  an  example  for  thearray[1,2,3,4]the  subsequences  are  (1),  (2),  (3),  (4),  (1,2),(1,3),(1,4),  (2,3),  (2,4),  (3,4),  (1,2,3),  (1,2,4),  (1,3,4),  (2,3,4),(1,2,3,4)
+The  Single-Source  Shortest  Path  (SSSP)  problem  consistsof finding the shortest paths between a given vertex v and allother vertices in the graph.
+
 ---
 
 ### Analysis
@@ -92,19 +90,28 @@ A  subsequence  is  a  sequence  that  can  be  derived  from  an-other  sequenc
 **Time Complexity**
 
 <br />Approach 1:
-The time complexity will beO(2^n)because it checks out allthe possibilities by recursing.
+Time  complexity  of  breadth  first  search(BFS) is O(V+E),  where V is  the  number  of  nodes  and E is  the number of edges.
 
 <br />Approach 2:
-The time complexity will beO(n∗3)because we are in away doing memoization our approach 1 code and saving time by using values of the precalculated subproblems.
+Time  complexity  of  Dijkstra’s  algorithm  is O(V+ElogE), because it goes through all nodes of  the  graph  and adds the distance for maximum of one time when at the current node.
+
+<br />Approach 3:
+Time  complexity  of  Bellman Ford's algorithm  is O(V*E),  because  it consists  of (V−1) rounds  and iterates through all E edges during a round.
+
+
 
 
 **Space Complexity**
 
 <br />Approach 1:
-<br />The space complexity isO(n),for storing the input array.
+<br />The  space  complexity  for Dijkstra’s algorithms  is [O(V+E)(for  adjacency  list)  + O(V) (for  other  arrays)]
 
 <br />Approach 2:
-<br />The space complexity will beO(n)for input array andO(n∗3)for storing the values of each condition by dynamic programming.
+<br />The  space  complexity  for  BFS algorithms  is [O(V+E)(for  adjacency  list)  + O(V) (for  other  arrays)].
+
+<br />Approach 3:
+<br />The space complexity is O(V) +O(E).
+
 
 
 ---
